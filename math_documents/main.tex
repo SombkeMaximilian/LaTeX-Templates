@@ -1,0 +1,35 @@
+% article seems best for essays and taking notes (maybe revise in the future)
+\documentclass[12pt,letterpaper]{article}
+
+% imports and configuration of packages
+\input{preamble}
+
+% custom commands for math formulas, etc.
+\input{customcommands}
+
+% uncomment and edit to only compile section currently working on
+%\includeonly{titlepage, introduction, section1}
+
+% main document
+\begin{document}
+	
+	% titlepage without page number
+	\thispagestyle{empty}
+	\include{titlepage}
+
+	% table of contents, adjust geometry as necessary
+	\newgeometry{top=30mm, bottom=30mm, left=30mm, right=30mm}
+	\tableofcontents
+	
+	% introduction
+	\include{introduction}
+	
+	% main sections
+	\include{section1}
+	\include{section2}
+	
+	% references
+	\nocite{*}
+	\printbibliography[heading=bibintoc, title={References}]
+	
+\end{document}

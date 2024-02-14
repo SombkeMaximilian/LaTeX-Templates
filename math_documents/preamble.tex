@@ -1,0 +1,39 @@
+% imports
+\usepackage[a4paper, top=40mm, bottom=40mm, left=40mm, right=40mm]{geometry}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{gensymb}
+\usepackage{pgfplots}
+\usepackage{fancyhdr}
+\usepackage[backend=biber]{biblatex}
+\usepackage[hidelinks]{hyperref}
+
+% equation numbering (section.equation)
+\numberwithin{equation}{section}
+
+% begin pgfplots config
+\pgfplotsset{compat=newest}
+\pgfplotsset{samples = 500}
+% end pgfplots config
+
+% begin fancyhdr config
+\pagestyle{fancy}
+\setlength{\headheight}{28pt}
+\fancyhf{}
+\rhead{}
+\lhead{}
+\rfoot{\thepage}
+\lfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% end fancyhdr config
+
+% begin biblatex config
+\addbibresource{references.bib}
+% end biblatex config
+
+% titlepage
+\title{main title}
+\date{\today}
+\author{author}
