@@ -7,26 +7,24 @@
 % custom commands for math formulas, etc.
 \input{customcommands}
 
-% uncomment and edit to only compile section currently working on
-%\includeonly{titlepage, introduction, section1}
+% only compile section that's currently being worked on
+\includeonly{titlepage, introduction, section1}
 
 % main document
 \begin{document}
 	
 	% titlepage without page number
-	\thispagestyle{empty}
+	\newgeometry{top=40mm, bottom=40mm, left=40mm, right=40mm}
 	\include{titlepage}
 
 	% table of contents, adjust geometry as necessary
 	\newgeometry{top=30mm, bottom=30mm, left=30mm, right=30mm}
 	\tableofcontents
 	
-	% introduction
-	\include{introduction}
-	
 	% main sections
 	\include{section1}
 	\include{section2}
+	\include{section3}
 	
 	% references
 	\nocite{*}
