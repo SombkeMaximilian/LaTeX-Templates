@@ -1,5 +1,5 @@
 % imports
-\usepackage[a4paper, top=40mm, bottom=40mm, left=40mm, right=40mm]{geometry}
+\usepackage[a4paper]{geometry}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{textcomp}
@@ -21,12 +21,12 @@
 \pagestyle{fancy}
 \setlength{\headheight}{28pt}
 \fancyhf{}
-\rhead{}
-\lhead{}
-\rfoot{\thepage}
-\lfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\fancyhead[R]{}
+\fancyhead[L]{}
+\fancyfoot[R]{\thepage}
+\fancyfoot[L]{}
+\renewcommand{\headrulewidth}{0.0pt}
+\renewcommand{\footrulewidth}{0.0pt}
 % end fancyhdr config
 
 % begin biblatex config
