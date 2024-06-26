@@ -1,0 +1,52 @@
+% Imports
+\usepackage{geometry}
+\usepackage{titling}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+% margins
+\geometry{
+    a4paper, 
+    top       = 25mm, 
+    bottom    = 25mm,
+    left      = 20mm, 
+    right     = 20mm, 
+    headsep   = 75mm,
+}
+
+% Colors
+\definecolor{MyDarkGrey}{HTML}{2d2d2d}
+\definecolor{MyLightGrey}{HTML}{e6e6e6}
+
+% Custom header
+\newcommand{\customheader}[4]{
+    \tikz[
+        remember picture, 
+        overlay
+    ]
+    {
+        \node[
+            rectangle, 
+            fill           = #3, 
+            anchor         = north, 
+            minimum width  = \paperwidth, 
+            minimum height = 35mm,
+            inner sep      = 0mm
+        ] 
+        (header) at (current page.north) {};
+
+        \node[
+            anchor = center,
+            font = \Huge \color{#4}
+        ]
+        (name) at (header) {{#1 \textbf{#2}}};
+
+        \draw[
+            black,
+            line width = 1mm
+        ]
+        (header.south east) -- (header.south west);
+    }
+    \vspace{10mm}
+}
