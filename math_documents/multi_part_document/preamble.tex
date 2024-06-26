@@ -1,13 +1,22 @@
 % imports
-\usepackage[a4paper, top=30mm, bottom=30mm, left=30mm, right=30mm]{geometry}
+\usepackage{geometry}
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{textcomp}
 \usepackage{gensymb}
 \usepackage{pgfplots}
 \usepackage{fancyhdr}
-\usepackage[backend=biber]{biblatex}
-\usepackage[hidelinks]{hyperref}
+\usepackage{biblatex}
+\usepackage{hyperref}
+
+% margins
+\geometry{
+    a4paper, 
+    top    = 30mm, 
+    bottom = 30mm,
+    left   = 30mm, 
+    right  = 30mm
+}
 
 % equation numbering (section.equation)
 \numberwithin{equation}{section}
@@ -29,6 +38,14 @@
 
 % biblatex config
 \addbibresource{references.bib}
+
+% links
+\hypersetup{
+    colorlinks = true,
+    urlcolor   = black,
+    linkcolor  = black,
+    citecolor  = black
+}
 
 % titlepage
 \title{main title}
