@@ -1,46 +1,118 @@
 % Imports
 \usepackage{geometry}
-\usepackage{titling}
 \usepackage{lmodern}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{graphicx}
+\usepackage{tabularx}
 \usepackage{xcolor}
+\usepackage{tcolorbox}
 \usepackage{tikz}
+\usepackage{pgffor}
+\usepackage{hyperref}
 
-% margins
+% Margins
 \geometry{
-    a4paper, 
-    top       = 25mm, 
-    bottom    = 25mm,
-    left      = 20mm, 
-    right     = 20mm, 
-    headsep   = 75mm,
+    a4paper,
+    includehead,
+    includefoot,
+    top          = \topsidemargin, 
+    bottom       = \botsidemargin,
+    left         = \leftsidemargin, 
+    right        = \rightsidemargin,
+    headheight   = 0mm,
+    headsep      = 0mm,
+    marginparsep = 0mm,
+    foot         = 0mm,
+    footskip     = 0mm
 }
 
-% Colors
-\definecolor{MyDarkGrey}{HTML}{2d2d2d}
-\definecolor{MyLightGrey}{HTML}{e6e6e6}
+% Remove Page Number
+\pagestyle{empty}
 
-% Custom header
-\newcommand{\customheader}[4]{
+% Sections (used in right column)
+\titleformat{\section}[block]{\LARGE \scshape}{}{2mm}{}[\vspace{-5mm} \rule{\textwidth}{0.3mm} \vspace{-7.5mm}]
+
+% Subsections (used in left column)
+\titleformat{\subsection}[block]{\raggedleft \large}{}{0mm}{
+    \begin{tcolorbox}[
+        capture  = hbox,
+        colback  = subsectionbg, 
+        colframe = subsectionframe,
+        coltext  = subsectionfontcolor,
+        boxrule  = 0.5mm,
+        height   = 7mm, 
+        width    = 0.5 \textwidth,
+        halign   = center,
+        left     = 0mm, 
+        right    = 0mm, 
+        top      = 0mm, 
+        bottom   = 0mm,
+        sharp corners,
+        nobeforeafter
+        ]
+}
+[
+    \end{tcolorbox}%
+    \vspace{-2mm}
+]
+
+% Main Body Background
+\newcommand{\setbackground}[4]{
+    \tikz[
+        remember picture,
+        overlay
+    ]
+    {
+        \node[
+            shape          = rectangle,
+            fill           = #3,
+            anchor         = west,
+            minimum width  = #1,
+            minimum height = \paperheight,
+            inner sep      = 0mm
+        ]
+        (left column) at (current page.west) {};
+
+        \node[
+            shape          = rectangle,
+            fill           = #4,
+            anchor         = west,
+            minimum width  = #2,
+            minimum height = \paperheight,
+            inner sep      = 0mm
+        ]
+        (right column) at (left column.east) {};
+
+        \draw[
+            color      = black,
+            line width = 0.1mm
+        ]
+        (left column.north east) -- (right column.south west);
+    }
+}
+
+% Custom Header
+\newcommand{\header}[4]{
     \tikz[
         remember picture, 
         overlay
     ]
     {
         \node[
-            rectangle, 
+            shape          = rectangle, 
             fill           = #3, 
             anchor         = north, 
             minimum width  = \paperwidth, 
-            minimum height = 35mm,
+            minimum height = \topsidemargin,
             inner sep      = 0mm
         ] 
         (header) at (current page.north) {};
 
         \node[
             anchor = center,
-            font = \Huge \color{#4}
         ]
-        (name) at (header) {{#1 \textbf{#2}}};
+        (name) at (header) {{\Huge \bfseries \color{#4} #1, #2}};
 
         \draw[
             black,
@@ -48,5 +120,83 @@
         ]
         (header.south east) -- (header.south west);
     }
-    \vspace{10mm}
 }
+
+% Photo
+\newcommand{\photo}[4]{
+    \vspace{-15mm}
+    \begingroup
+        \centering
+        \tikz[]
+        {
+            \node[
+                shape          = #2,
+                line width     = #4,
+                minimum height = #3,
+                minimum width  = #3,
+                draw           = black,
+                inner sep      = 0mm,
+                outer sep      = 0mm,
+                path picture   = {
+                    \node at (path picture bounding box.center) {
+                        \includegraphics[
+                            width  = #3,
+                            height = #3]
+                            {
+                                #1
+                            }
+                    };
+                }
+            ]
+            {
+
+            }
+        }
+        \\
+    \endgroup
+    \vspace{5mm}
+}
+
+% Helper command for text blocks
+\newcommand{\elementblock}[2]{
+    \begingroup
+        #2
+        #1
+    \endgroup
+    \vspace{5mm}
+}
+
+% Helper command for table blocks
+\newcommand{\educationtableblock}[4]{
+    #1 & {\bfseries \large #2}              \newline
+         {\bfseries #3 \color{iconcolor} \small #4}
+}
+\newcommand{\experiencetableblock}[5]{
+    #1 & {\bfseries \large #2}                          \newline
+         {\bfseries #3 \color{iconcolor} \small #4}     \newline
+         {\color{experiencedetailsfontcolor} \small #5}
+}
+
+% Education
+\newcommand{\education}{\elementblock{\educationtable}{\centering}}
+
+% Experience
+\newcommand{\experience}{\elementblock{\experiencetable}{\centering}}
+
+% Languages
+\newcommand{\languages}{\elementblock{\languagetable}{\raggedright}}
+
+% Programming
+\newcommand{\programming}{\elementblock{\programminglist}{\raggedright}}
+
+% Personal Information
+\newcommand{\personal}{\elementblock{\name \\ \citizenship \\ \dob \\}{\raggedleft}}
+
+% Interests
+\newcommand{\interests}{\elementblock{\interestsitems}{\raggedleft}}
+
+% Contact Information
+\newcommand{\contact}{\elementblock{
+    \raisebox{-0.20 \height}{\color{iconcolor} \small \faPhone*} \phonenumber \\
+    \raisebox{-0.20 \height}{\color{iconcolor} \small \faEnvelope[regular]} \email \\
+}{\raggedleft}}

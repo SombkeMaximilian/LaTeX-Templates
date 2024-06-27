@@ -1,0 +1,80 @@
+% Name & Title Description
+\newcommand{\name}{FirstName LastName}
+\newcommand{\titledescription}{Title}
+
+% Education
+\newcommand{\educationtitle}{Education}
+\newcommand{\educationtable}{
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabularx}{\rightcolumntextwidth}{>{\raggedleft}p{\tableblocksdatewidth} | X@{}}
+        \educationtableblock{2000-2010}{Item1}{Location1}{\faGlobeEurope}
+        
+        \vspace{\tableblocksverticalmargin} \\
+        
+        \educationtableblock{2010-2015}{Item1}{Location2}{\faGlobeAmericas}
+        
+        \vspace{\tableblocksverticalmargin} \\
+        
+        \educationtableblock{2015-2024}{Item1}{Location3}{\faGlobeAsia}
+    \end{tabularx}
+}
+
+% Experience
+\newcommand{\experiencetitle}{Experience}
+\newcommand{\experiencetable}{
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabularx}{\rightcolumntextwidth}{>{\raggedleft}p{\tableblocksdatewidth} | X@{}}
+        \experiencetableblock{2000-2010}{Employer1}{Location1}{\faGlobeEurope}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
+        
+        \vspace{\tableblocksverticalmargin} \\
+        
+        \experiencetableblock{2010-2019}{Employer2}{Location2}{\faGlobeAmericas}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
+        
+        \vspace{\tableblocksverticalmargin} \\
+        
+        \experiencetableblock{2019-2024}{Employer3}{Location3}{\faGlobeAsia}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
+    \end{tabularx}
+}
+
+% Languages
+\newcommand{\languagestitle}{Languages}
+\newcommand{\languagetable}{
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabular}{>{\raggedleft}p{16mm} | l l}
+        \textbf{German}  & C2 & native
+        \\
+        \textbf{English} & C2 & fluent
+    \end{tabular}
+}
+
+% Programming
+\newcommand{\programmingtitle}{Programming}
+\newcommand{\programminglist}{
+    \begin{itemize}
+        \setlength{\itemsep}{0mm}
+        \item C/C++
+        \item Rust
+        \item Python
+        \item R
+    \end{itemize}
+}
+
+% Personal
+\newcommand{\personaltitle}{Personal}
+\newcommand{\citizenship}{Citizenship: Germany}
+\newcommand{\dob}{01.01.2000}
+
+% Interests
+\newcommand{\intereststitle}{Interests}
+\newcommand{\interestsitems}{
+    Item1 \\
+    Item2 \\
+    Item3 \\
+    Item4 \\
+    Item5 \\
+}
+
+% Contact
+\newcommand{\contacttitle}{Contact}
+\newcommand{\phonenumber}{+49 xxxx xxxxxxx}
+\newcommand{\email}{mymail@domain.com}

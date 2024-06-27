@@ -1,11 +1,45 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper, 10pt]{article}
 
+\input{lengths}
 \input{preamble}
+\input{colors}
+\input{information}
 
 \begin{document}
 
-    \customheader{FirstName}{LastName}{MyDarkGrey}{MyLightGrey}
+    \setbackground{\leftcolumnwidth}{\rightcolumnwidth}{leftcolumnbg}{rightcolumnbg}
+    \header{\name}{\titledescription}{headerbg}{headerfontcolor}
 
-    smoe test text
+    \begin{minipage}[t]{\leftcolumntextwidth} \vspace{0mm}%
+        \photo{images/photosample.png}{circle}{\photowidth}{\photoframewidth}
+        
+        \subsection{\personaltitle}
+        \personal
+
+        \subsection{\intereststitle}
+        \interests
+
+        \subsection{\contacttitle}
+        \contact
+    \end{minipage}%
+    \hspace{2 \columnmargin}%
+    \begin{minipage}[t]{\rightcolumntextwidth} \vspace{0mm}%
+        \section{\educationtitle}
+        \education
+    
+        \section{\experiencetitle}
+        \experience
+    
+        \begin{minipage}[t]{0.45 \rightcolumntextwidth}
+            \section{\languagestitle}
+            \languages
+        \end{minipage}%
+        \hfill%
+        \begin{minipage}[t]{0.45 \rightcolumntextwidth}
+            \section{\programmingtitle}
+            \programming
+        \end{minipage}
+
+    \end{minipage}
 
 \end{document}

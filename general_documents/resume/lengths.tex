@@ -1,0 +1,47 @@
+% Length Variables
+\newlength{\topsidemargin}
+\newlength{\botsidemargin}
+\newlength{\leftsidemargin}
+\newlength{\rightsidemargin}
+
+\newlength{\leftcolumnwidth}
+\newlength{\rightcolumnwidth}
+\newlength{\columnmargin}
+\newlength{\leftcolumntextwidth}
+\newlength{\rightcolumntextwidth}
+
+\newlength{\photowidth}
+\newlength{\photoframewidth}
+
+\newlength{\tableblocksdatewidth}
+\newlength{\tableblocksverticalmargin}
+
+% Margins
+\setlength{\topsidemargin}{30mm}
+\setlength{\botsidemargin}{15mm}
+\setlength{\leftsidemargin}{5mm}
+\setlength{\rightsidemargin}{5mm}
+
+% Paragraph Indent
+\setlength{\parindent}{0mm}
+
+% Column Width Ratios
+\newcommand{\leftcolumnratio}{0.3}
+\newcommand{\rightcolumnratio}{0.7}
+
+% Left/Right Column's Right/Left Margin
+\setlength{\columnmargin}{5mm}
+
+% Column Widths
+\setlength{\leftcolumnwidth}{\leftcolumnratio \paperwidth}
+\setlength{\rightcolumnwidth}{\rightcolumnratio \paperwidth}
+\setlength{\leftcolumntextwidth}{\dimexpr \leftcolumnwidth - \leftsidemargin - \columnmargin}
+\setlength{\rightcolumntextwidth}{\dimexpr \rightcolumnwidth - \rightsidemargin - \columnmargin}
+
+% Photo Widths
+\setlength{\photowidth}{0.9 \leftcolumntextwidth}
+\setlength{\photoframewidth}{1mm}
+
+% Table Lengths
+\setlength{\tableblocksdatewidth}{16mm}
+\setlength{\tableblocksverticalmargin}{1.30 \baselineskip}
