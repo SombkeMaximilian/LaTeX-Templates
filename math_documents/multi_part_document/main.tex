@@ -1,33 +1,33 @@
-% article seems best for essays and taking notes (maybe revise in the future)
 \documentclass[12pt,letterpaper]{article}
 
-% imports and configuration of packages
 \input{preamble}
 
-% custom commands for math formulas, etc.
-\input{customcommands}
+\title{main title}
+\date{\today}
+\author{author}
 
-% only compile section that's currently being worked on
-%\includeonly{titlepage, introduction, section1}
-
-% main document
 \begin{document}
 	
-	% titlepage without page number
 	\newgeometry{top=40mm, bottom=40mm, left=40mm, right=40mm}
-	\include{titlepage}
+	\maketitle
+	\thispagestyle{empty}
+	\setcounter{page}{0}
 
-	% table of contents
 	\restoregeometry
 	\tableofcontents
 	
-	% main sections
-	\include{section1}
-	\include{section2}
-	\include{section3}
+	\include{sections/section1}
+	\include{sections/section2}
+	\include{sections/section3}
 	
-	% references
 	\nocite{*}
 	\printbibliography[heading=bibintoc, title={References}]
+
+	\printglossary[title = {Glossary of Terms}, toctitle = {Glossary of Terms}]
+	\glsaddall
+
+	\newpage
+	\hypertarget{listoffigures}{}
+	\listoffigures
 	
 \end{document}

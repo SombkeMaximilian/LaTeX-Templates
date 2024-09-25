@@ -1,33 +1,92 @@
-% imports
-\usepackage{geometry}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{textcomp}
-\usepackage{gensymb}
-\usepackage{pgfplots}
-\usepackage{fancyhdr}
-\usepackage{biblatex}
-\usepackage{hyperref}
+% -------------------------------------------------------------------------------------------------
+% Debug
 
-% margins
+\usepackage{blindtext}
+
+
+% -------------------------------------------------------------------------------------------------
+% Etoolbox
+
+\usepackage{etoolbox}
+
+
+% -------------------------------------------------------------------------------------------------
+% Font and Encoding
+
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
+
+
+% -------------------------------------------------------------------------------------------------
+% Margins and Spacing
+
+\usepackage{geometry}
+
 \geometry{
     a4paper, 
-    top    = 30mm, 
-    bottom = 30mm,
-    left   = 30mm, 
-    right  = 30mm
+    top    = 20mm, 
+    bottom = 25mm,
+    left   = 20mm, 
+    right  = 20mm,
+    %showframe
 }
 
-% equation numbering (section.equation)
+\linespread{1.05}
+\renewcommand{\arraystretch}{1.2}
+
+
+% -------------------------------------------------------------------------------------------------
+% Math Symbols and Equations
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
 \numberwithin{equation}{section}
 
-% pgfplots config
-\pgfplotsset{compat=newest}
-\pgfplotsset{samples = 500}
 
-% fancyhdr config
+% -------------------------------------------------------------------------------------------------
+% Colors
+
+\usepackage{xcolor}
+
+
+% -------------------------------------------------------------------------------------------------
+% Title
+
+\usepackage{titling}
+
+\pretitle{\begin{center} \Huge}
+\posttitle{\end{center}}
+
+\preauthor{\begin{center} \Large}
+\postauthor{\end{center}}
+
+\predate{\begin{center} \large}
+\postdate{\end{center}}
+
+
+% -------------------------------------------------------------------------------------------------
+% Sections
+
+\usepackage{titlesec}
+
+\titleformat{\section}[block]{\Large \bfseries \raggedright}{\thesection .}{2mm}{}[]
+\titlespacing*{\section}{0mm}{\baselineskip}{2.25mm}
+
+\titleformat{\subsection}[block]{\bfseries \raggedright}{}{0mm}{\thesubsection \;}[]
+\titlespacing*{\subsection}{0mm}{0.75 \baselineskip}{1.5mm}
+
+\titleformat{\subsubsection}[runin]{\bfseries \raggedright}{}{0mm}{}[\mbox{ -- }]
+\titlespacing*{\subsubsection}{0mm}{0mm}{0mm}
+
+
+% -------------------------------------------------------------------------------------------------
+% FancyHDR
+
+\usepackage{fancyhdr}
+
 \pagestyle{fancy}
-\setlength{\headheight}{28pt}
+
 \fancyhf{}
 \fancyhead[L]{}
 \fancyhead[C]{}
@@ -36,18 +95,39 @@
 \fancyfoot[C]{\thepage}
 \fancyfoot[R]{}
 
-% biblatex config
-\addbibresource{references.bib}
+\setlength{\headheight}{28pt}
+\renewcommand{\headrulewidth}{0.5mm}
+\renewcommand{\footrulewidth}{0.0mm}
 
-% links
+
+% -------------------------------------------------------------------------------------------------
+% Biblatex
+
+\usepackage{biblatex}
+
+\addbibresource{resources/references.bib}
+
+
+% -------------------------------------------------------------------------------------------------
+% Hyperref
+
+\usepackage{hyperref}
+
 \hypersetup{
     colorlinks = true,
     urlcolor   = black,
     linkcolor  = black,
-    citecolor  = black
+    citecolor  = blue
 }
 
-% titlepage
-\title{main title}
-\date{\today}
-\author{author}
+
+% -------------------------------------------------------------------------------------------------
+% Glossary
+
+\usepackage[toc, acronym, automake, nogroupskip, nonumberlist]{glossaries-extra}
+
+\makeglossaries
+\input{resources/glossary}
+
+\glsfindwidesttoplevelname
+\setglossarystyle{alttree}
