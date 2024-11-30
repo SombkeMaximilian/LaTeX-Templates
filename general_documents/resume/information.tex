@@ -9,7 +9,7 @@
     \begin{tabularx}{\fulltablewidth}{>{\raggedleft}p{\tableblocksdatewidth} | X@{}}
         \educationtableblock{2000-2010}{Item1}{Location1}{\faGlobeEurope}
         
-        \vspace{\tableblocksverticalmargin} \\
+        \fulltableskip
         
         \educationtableblock{2010-2015}{Item1}{Location2}{\faGlobeAmericas}
     \end{tabularx}
@@ -22,7 +22,7 @@
     \begin{tabularx}{\fulltablewidth}{>{\raggedleft}p{\tableblocksdatewidth} | X@{}}
         \experiencetableblock{2000-2010}{Employer1}{Location1}{\faGlobeEurope}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
         
-        \vspace{\tableblocksverticalmargin} \\
+        \fulltableskip
         
         \experiencetableblock{2010-2019}{Employer2}{Location2}{\faGlobeAmericas}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
     \end{tabularx}
@@ -33,11 +33,11 @@
 \newcommand{\projectstable}{
     \renewcommand{\arraystretch}{1.1}
     \begin{tabularx}{\fulltablewidth}{>{\raggedleft}p{\tableblocksdatewidth} | X@{}}
-        \projectstableblock{2000-2010}{Project1}{https://github.com/}{GitHub}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
+        \projectstableblock{2000-2010}{Project1}{https://github.com/}{GitHub}{Description of Project 1}
         
-        \vspace{\tableblocksverticalmargin} \\
+        \fulltableskip
         
-        \projectstableblock{2010-2019}{Project2}{https://github.com/}{GitHub}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
+        \projectstableblock{2010-2019}{Project2}{https://github.com/}{GitHub}{Description of Project 2}
     \end{tabularx}
 }
 
@@ -45,23 +45,35 @@
 \newcommand{\languagestitle}{Languages}
 \newcommand{\languagetable}{
     \renewcommand{\arraystretch}{1.1}
-    \begin{tabular}{>{\raggedleft}p{20mm} | l l}
+    \begin{tabularx}{\halftablewidth}{>{\raggedleft}p{20mm} | l X@{}}
         \textbf{German}  & C2 & native
-        \\
+
+        \halftableskip
+        
         \textbf{English} & C2 & fluent
-    \end{tabular}
+    \end{tabularx}
 }
 
 % Programming
 \newcommand{\programmingtitle}{Programming}
 \newcommand{\programminglist}{
-    \begin{itemize}
-        \setlength{\itemsep}{0mm}
-        \item C/C++
-        \item Rust
-        \item Python
-        \item R
-    \end{itemize}
+    \renewcommand{\arraystretch}{1.1}
+    \centering
+    \begin{tabularx}{\halftablewidth}{>{\raggedleft}p{12mm} | X@{}}
+        C & Embedded Systems \newline Linux Kernel
+        
+        \halftableskip
+
+        C++ & Embedded Systems \newline Parallel Programming
+        
+        \halftableskip
+
+        Rust & Embedded Systems \newline Async Programming
+        
+        \halftableskip
+
+        Python & Bioinformatics \newline Machine Learning
+    \end{tabularx}
 }
 
 % Personal

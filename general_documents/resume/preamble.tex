@@ -170,6 +170,8 @@
     \endgroup
     \vspace{5mm}
 }
+\newcommand{\fulltableskip}{\vspace{\tableblocksverticalmargin}\hphantom{.} \\}
+\newcommand{\halftableskip}{\vspace{\halftableblocksverticalmargin}\hphantom{.} \\}
 
 % Helper command for table blocks
 \newcommand{\educationtableblock}[4]{
@@ -182,7 +184,7 @@
          {\color{experiencedetailsfontcolor} \small #5}
 }
 \newcommand{\projectstableblock}[5]{
-    #1 & {\bfseries \large #2}                              \newline
+    #1 & {\bfseries \large #2}                             \newline
          {\href{#3}{\bfseries \color{projecturlcolor} #4}} \newline
          {\color{projectsdetailsfontcolor} \small #5}
 }

@@ -15,8 +15,11 @@
 
 \newlength{\fulltablerightmargin}
 \newlength{\fulltablewidth}
+\newlength{\halftablerightmargin}
+\newlength{\halftablewidth}
 \newlength{\tableblocksdatewidth}
 \newlength{\tableblocksverticalmargin}
+\newlength{\halftableblocksverticalmargin}
 
 % Margins
 \setlength{\topsidemargin}{30mm}
@@ -47,5 +50,8 @@
 % Table Lengths
 \setlength{\fulltablerightmargin}{10mm}
 \setlength{\fulltablewidth}{\dimexpr \rightcolumntextwidth - \fulltablerightmargin}
+\setlength{\halftablerightmargin}{10mm}
+\setlength{\halftablewidth}{\dimexpr 0.48 \rightcolumntextwidth - \halftablerightmargin}
 \setlength{\tableblocksdatewidth}{20mm}
-\setlength{\tableblocksverticalmargin}{1.30 \baselineskip}
+\setlength{\tableblocksverticalmargin}{-2.5mm}
+\setlength{\halftableblocksverticalmargin}{-3.0mm}
