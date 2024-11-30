@@ -181,12 +181,20 @@
          {\bfseries #3 \color{iconcolor} \small #4}     \newline
          {\color{experiencedetailsfontcolor} \small #5}
 }
+\newcommand{\projectstableblock}[4]{
+    #1 & {\bfseries \large #2}                        \newline
+         {\href{#3}{\color{projecturlcolor} #3}}      \newline
+         {\color{projectsdetailsfontcolor} \small #4}
+}
 
 % Education
 \newcommand{\education}{\elementblock{\educationtable}{\centering}}
 
 % Experience
 \newcommand{\experience}{\elementblock{\experiencetable}{\centering}}
+
+% Projects
+\newcommand{\projects}{\elementblock{\projectstable}{\centering}}
 
 % Languages
 \newcommand{\languages}{\elementblock{\languagetable}{\raggedright}}

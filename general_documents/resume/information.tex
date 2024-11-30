@@ -12,10 +12,6 @@
         \vspace{\tableblocksverticalmargin} \\
         
         \educationtableblock{2010-2015}{Item1}{Location2}{\faGlobeAmericas}
-        
-        \vspace{\tableblocksverticalmargin} \\
-        
-        \educationtableblock{2015-2024}{Item1}{Location3}{\faGlobeAsia}
     \end{tabularx}
 }
 
@@ -29,10 +25,19 @@
         \vspace{\tableblocksverticalmargin} \\
         
         \experiencetableblock{2010-2019}{Employer2}{Location2}{\faGlobeAmericas}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
+    \end{tabularx}
+}
+
+% Experience
+\newcommand{\projectstitle}{Projects}
+\newcommand{\projectstable}{
+    \renewcommand{\arraystretch}{1.1}
+    \begin{tabularx}{\fulltablewidth}{>{\raggedleft}p{\tableblocksdatewidth} | X@{}}
+        \projectstableblock{2000-2010}{Project1}{https://github.com/}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
         
         \vspace{\tableblocksverticalmargin} \\
         
-        \experiencetableblock{2019-2024}{Employer3}{Location3}{\faGlobeAsia}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
+        \projectstableblock{2010-2019}{Project2}{https://github.com/}{Details that require a really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really really large amount of text}
     \end{tabularx}
 }
 
