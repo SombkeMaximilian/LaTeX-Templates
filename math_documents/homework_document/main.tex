@@ -1,43 +1,10 @@
 \documentclass[12pt,letterpaper]{article}
 
-% constants to avoid repeating, redefine as needed
 \newcommand{\myname}{Name}
 \newcommand{\mylecture}{Lecture}
 \newcommand{\myproblemset}{Problem Set 1}
 
-% imports
-\usepackage[a4paper, top=30mm, bottom=30mm, left=30mm, right=30mm]{geometry}
-\usepackage{amssymb}
-\usepackage{amsmath}
-\usepackage{textcomp}
-\usepackage{gensymb}
-\usepackage{pgfplots}
-\usepackage{fancyhdr}
-
-% equation numbering (section.equation)
-\numberwithin{equation}{section}
-
-% pgfplots config
-\pgfplotsset{compat=newest}
-\pgfplotsset{samples = 500}
-
-% fancyhdr config
-\pagestyle{fancy}
-\setlength{\headheight}{28pt}
-\fancyhf{}
-\fancyhead[L]{\mylecture}
-\fancyhead[C]{}
-\fancyhead[R]{\myproblemset}
-\fancyfoot[L]{}
-\fancyfoot[C]{\thepage}
-\fancyfoot[R]{}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.0pt}
-
-% no paragraph indent
-\setlength{\parindent}{0pt}
-
-% custom commands for math formulas, etc.
+\input{preamble}
 \input{customcommands}
 
 \begin{document}

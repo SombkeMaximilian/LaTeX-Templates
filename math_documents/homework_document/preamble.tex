@@ -1,0 +1,54 @@
+% -------------------------------------------------------------------------------------------------
+% Font and Encoding
+
+\usepackage{textcomp}
+\usepackage{gensymb}
+
+
+% -------------------------------------------------------------------------------------------------
+% Margins and Spacing
+
+\usepackage{geometry}
+
+\geometry{
+	a4paper,
+	top = 30mm,
+	bottom = 30mm,
+	left = 30mm,
+	right = 30mm
+}
+\setlength{\parindent}{0pt}
+
+
+% -------------------------------------------------------------------------------------------------
+% Math Symbols and Equations
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\numberwithin{equation}{section}
+
+
+% -------------------------------------------------------------------------------------------------
+% FancyHDR
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{28pt}
+\fancyhf{}
+\fancyhead[L]{\mylecture}
+\fancyhead[C]{}
+\fancyhead[R]{\myproblemset}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+
+% -------------------------------------------------------------------------------------------------
+% Tikz and Pgf
+
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\pgfplotsset{samples = 500}
