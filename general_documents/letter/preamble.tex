@@ -1,0 +1,101 @@
+% -------------------------------------------------------------------------------------------------
+% Debug
+
+\usepackage{blindtext}
+
+
+% -------------------------------------------------------------------------------------------------
+% Font and Encoding
+
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
+
+
+% -------------------------------------------------------------------------------------------------
+% Margins and Spacing
+
+\usepackage[includeheadfoot]{geometry}
+
+\geometry{
+	a4paper,
+	top = 30mm,
+	bottom = 30mm,
+	left = 30mm,
+	right = 30mm,
+    headheight = 60mm,
+    headsep = 2em,
+    footskip = 6mm,
+}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\linespread{1.25}
+
+
+% -------------------------------------------------------------------------------------------------
+% Letter Information
+
+\makeatletter
+
+\newcommand*{\sname}[1]{\def\@sname{#1}}
+\newcommand*{\saddressone}[1]{\def\@saddressone{#1}}
+\newcommand*{\saddresstwo}[1]{\def\@saddresstwo{#1}}
+\newcommand*{\saddressthree}[1]{\def\@saddressthree{#1}}
+\newcommand*{\dateinfo}[1]{\def\@dateinfo{#1}}
+
+\newcommand*{\rname}[1]{\def\@rname{#1}}
+\newcommand*{\raddressone}[1]{\def\@raddressone{#1}}
+\newcommand*{\raddresstwo}[1]{\def\@raddresstwo{#1}}
+\newcommand*{\raddressthree}[1]{\def\@raddressthree{#1}}
+
+\newcommand*{\subject}[1]{\def\@subject{#1}}
+
+\newcommand*{\enclosures}[1]{\def\@enclosures{#1}}
+
+\makeatother
+
+
+% -------------------------------------------------------------------------------------------------
+% FancyHDR
+
+\usepackage{fancyhdr}
+
+\makeatletter
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{
+    \raggedright
+    \begin{tabular}[t]{@{}l}
+        \@rname \\
+        \@raddressone \\
+        \@raddresstwo \\
+        \@raddressthree \\
+        \\
+        \\
+        \\
+        {\bfseries Subject: \@subject}
+    \end{tabular}
+}
+\fancyhead[C]{}
+\fancyhead[R]{
+    \raggedleft
+    \begin{tabular}[t]{l@{}}
+        \@sname \\
+        \@saddressone \\
+        \@saddresstwo \\
+        \@saddressthree \\
+        \\
+        \@dateinfo
+    \end{tabular}
+}
+\fancyfoot[L]{
+    \raggedright
+    Enclosures: \@enclosures
+}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+
+\makeatother
+
+\renewcommand{\headrulewidth}{0mm}
+\renewcommand{\footrulewidth}{0mm}
