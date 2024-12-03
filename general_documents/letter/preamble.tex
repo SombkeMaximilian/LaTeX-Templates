@@ -22,8 +22,8 @@
 	bottom = 30mm,
 	left = 30mm,
 	right = 30mm,
-    headheight = 35mm,
-    headsep = 2em,
+    headheight = 45mm,
+    headsep = 3em,
     footskip = 6mm,
 }
 \setlength{\parindent}{0pt}
@@ -40,12 +40,14 @@
 \newcommand*{\saddressone}[1]{\def\@saddressone{#1}}
 \newcommand*{\saddresstwo}[1]{\def\@saddresstwo{#1}}
 \newcommand*{\saddressthree}[1]{\def\@saddressthree{#1}}
+\newcommand*{\saddressfour}[1]{\def\@saddressfour{#1}}
 \newcommand*{\dateinfo}[1]{\def\@dateinfo{#1}}
 
 \newcommand*{\rname}[1]{\def\@rname{#1}}
 \newcommand*{\raddressone}[1]{\def\@raddressone{#1}}
 \newcommand*{\raddresstwo}[1]{\def\@raddresstwo{#1}}
 \newcommand*{\raddressthree}[1]{\def\@raddressthree{#1}}
+\newcommand*{\raddressfour}[1]{\def\@raddressfour{#1}}
 
 \newcommand*{\subject}[1]{\def\@subject{#1}}
 
@@ -70,11 +72,13 @@
         \@raddressone \\
         \@raddresstwo \\
         \@raddressthree \\
+        \@raddressfour \\
         \\
         \\
         \\
-        {\bfseries Subject: \@subject}
-    \end{tabular}
+        \\
+    \end{tabular} \\
+    {\bfseries Subject: \@subject}
 }
 \fancyhead[C]{}
 \fancyhead[R]{
@@ -84,9 +88,12 @@
         \@saddressone \\
         \@saddresstwo \\
         \@saddressthree \\
+        \@saddressfour \\
         \\
-        \@dateinfo
-    \end{tabular}
+        \\
+        \\
+    \end{tabular} \\ [0.55mm] % hack to align the left and right headers
+    \@dateinfo \\
 }
 \fancyfoot[L]{
     \raggedright
