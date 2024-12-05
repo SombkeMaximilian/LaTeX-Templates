@@ -108,16 +108,18 @@
             \end{tabular}
         \end{minipage}%
         \vspace{2 \baselineskip} \\
-        \begin{minipage}[t]{0.5 \textwidth}
-            \raggedright
-            \vphantom{Subject} \\
-            \bfseries Subject: \@subject
-        \end{minipage}%
-        \hfill%
+        \raggedleft
         \begin{minipage}[t]{0.5 \textwidth}
             \raggedleft
             \@dateinfo
+            \hspace*{-\fboxsep}
         \end{minipage}
+        \vspace{0.5 \baselineskip} \\
+        \raggedright
+        \begin{minipage}[t]{0.6 \textwidth}
+            \raggedright
+            \bfseries Subject: \@subject
+        \end{minipage}%
         \vspace{1 \baselineskip}
     \endgroup
 }
