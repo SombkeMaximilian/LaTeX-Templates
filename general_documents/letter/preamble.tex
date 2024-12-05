@@ -89,17 +89,6 @@
         \begin{minipage}[t]{0.4 \textwidth}
             \raggedright
             \begin{tabular}{@{}l}
-                \@sname \\
-                \@saddressone \\
-                \@saddresstwo \\
-                \@saddressthree \\
-                \@saddressfour
-            \end{tabular}
-        \end{minipage}%
-        \hfill%
-        \begin{minipage}[t]{0.4 \textwidth}
-            \raggedleft
-            \begin{tabular}{l@{}}
                 \@rname \\
                 \@raddressone \\
                 \@raddresstwo \\
@@ -107,13 +96,23 @@
                 \@raddressfour            
             \end{tabular}
         \end{minipage}%
+        \hfill%
+        \begin{minipage}[t]{0.4 \textwidth}
+            \raggedleft
+            \begin{tabular}{l@{}}
+                \@sname \\
+                \@saddressone \\
+                \@saddresstwo \\
+                \@saddressthree \\
+                \@saddressfour
+            \end{tabular}
+        \end{minipage}%
         \vspace{2 \baselineskip} \\
         \raggedleft
         \begin{minipage}[t]{0.5 \textwidth}
             \raggedleft
             \@dateinfo
-            \hspace*{-\fboxsep}
-        \end{minipage}
+        \end{minipage}%
         \vspace{0.5 \baselineskip} \\
         \raggedright
         \begin{minipage}[t]{0.7 \textwidth}
