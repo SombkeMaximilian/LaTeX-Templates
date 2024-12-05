@@ -64,13 +64,13 @@
 \newcommand*{\salutation}[1]{
     #1 \@rname,
 }
-\newcommand*{\closing}[2]{
-    \vspace{\baselineskip}
+\newcommand*{\closing}[3]{
+    \vspace{#2}
     \raggedleft
     \begin{minipage}[t]{0.5 \textwidth}
         #1,
 
-        \vspace{#2}
+        \vspace{#3}
 
         \@sname
     \end{minipage}
