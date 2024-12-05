@@ -57,6 +57,29 @@
 
 
 % -------------------------------------------------------------------------------------------------
+% Salutation and Closing
+
+\makeatletter
+
+\newcommand*{\salutation}[1]{
+    #1 \@rname,
+}
+\newcommand*{\closing}[2]{
+    \vspace{\baselineskip}
+    \raggedleft
+    \begin{minipage}[t]{0.5 \textwidth}
+        #1,
+
+        \vspace{#2}
+
+        \@sname
+    \end{minipage}
+}
+
+\makeatother
+
+
+% -------------------------------------------------------------------------------------------------
 % FancyHDR
 
 \usepackage{fancyhdr}
