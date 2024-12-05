@@ -14,7 +14,7 @@
 % -------------------------------------------------------------------------------------------------
 % Margins and Spacing
 
-\usepackage[includeheadfoot]{geometry}
+\usepackage{geometry}
 
 \geometry{
 	a4paper,
@@ -22,9 +22,7 @@
 	bottom = 30mm,
 	left = 30mm,
 	right = 30mm,
-    headheight = 45mm,
-    headsep = 3em,
-    footskip = 6mm,
+    showframe
 }
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1em}
@@ -80,52 +78,77 @@
 
 
 % -------------------------------------------------------------------------------------------------
+% Header and Footer
+
+\makeatletter
+
+\newcommand*{\makeheader}{
+    \begingroup
+    \linespread{1.05}
+    \selectfont
+        \begin{minipage}[t]{0.4 \textwidth}
+            \raggedright
+            \begin{tabular}{@{}l}
+                \@sname \\
+                \@saddressone \\
+                \@saddresstwo \\
+                \@saddressthree \\
+                \@saddressfour
+            \end{tabular}
+        \end{minipage}%
+        \hfill%
+        \begin{minipage}[t]{0.4 \textwidth}
+            \raggedleft
+            \begin{tabular}{l@{}}
+                \@rname \\
+                \@raddressone \\
+                \@raddresstwo \\
+                \@raddressthree \\
+                \@raddressfour            
+            \end{tabular}
+        \end{minipage}%
+        \vspace{2 \baselineskip} \\
+        \begin{minipage}[t]{0.5 \textwidth}
+            \raggedright
+            \vphantom{Subject} \\
+            \bfseries Subject: \@subject
+        \end{minipage}%
+        \hfill%
+        \begin{minipage}[t]{0.5 \textwidth}
+            \raggedleft
+            \@dateinfo
+        \end{minipage}
+        \vspace{1 \baselineskip}
+    \endgroup
+}
+\newcommand*{\makefooter}{
+    \begingroup
+    \linespread{1.05}
+    \selectfont
+    \vfill
+        \begin{minipage}[t]{\textwidth}
+            \raggedright
+            \textbf{Enclosures:} \@enclosures
+        \end{minipage}
+    \endgroup
+}
+
+\makeatother
+
+
+% -------------------------------------------------------------------------------------------------
 % FancyHDR
 
 \usepackage{fancyhdr}
 
-\makeatletter
-
 \pagestyle{fancy}
 \fancyhf{}
-\fancyhead[L]{
-    \raggedright
-    \begin{tabular}[t]{@{}l}
-        \@rname \\
-        \@raddressone \\
-        \@raddresstwo \\
-        \@raddressthree \\
-        \@raddressfour \\
-        \\
-        \\
-        \\
-        \\
-    \end{tabular} \\
-    {\bfseries Subject: \@subject}
-}
+\fancyhead[L]{}
 \fancyhead[C]{}
-\fancyhead[R]{
-    \raggedleft
-    \begin{tabular}[t]{l@{}}
-        \@sname \\
-        \@saddressone \\
-        \@saddresstwo \\
-        \@saddressthree \\
-        \@saddressfour \\
-        \\
-        \\
-        \\
-    \end{tabular} \\ [0.55mm] % hack to align the left and right headers
-    \@dateinfo \\
-}
-\fancyfoot[L]{
-    \raggedright
-    Enclosures: \@enclosures
-}
+\fancyhead[R]{}
+\fancyfoot[L]{}
 \fancyfoot[C]{}
 \fancyfoot[R]{}
-
-\makeatother
 
 \renewcommand{\headrulewidth}{0mm}
 \renewcommand{\footrulewidth}{0mm}
