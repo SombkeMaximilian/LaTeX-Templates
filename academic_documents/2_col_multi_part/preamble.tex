@@ -1,0 +1,203 @@
+% -------------------------------------------------------------------------------------------------
+% Debug
+
+\usepackage{blindtext}
+
+
+% -------------------------------------------------------------------------------------------------
+% Etoolbox
+
+\usepackage{etoolbox}
+
+
+% -------------------------------------------------------------------------------------------------
+% Font and Encoding
+
+\usepackage{mlmodern}
+\usepackage[T1]{fontenc}
+
+
+% -------------------------------------------------------------------------------------------------
+% Margins and Spacing
+
+\usepackage{geometry}
+
+\geometry{
+    a4paper, 
+    top       = 10mm, 
+    bottom    = 25mm,
+    left      = 15mm, 
+    right     = 15mm,
+    columnsep = 5mm,
+    %showframe
+}
+
+\linespread{1.05}
+\renewcommand{\arraystretch}{1.2}
+
+
+% -------------------------------------------------------------------------------------------------
+% Math Symbols and Equations
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\numberwithin{equation}{section}
+
+
+% -------------------------------------------------------------------------------------------------
+% Colors
+
+\usepackage{xcolor}
+
+
+% -------------------------------------------------------------------------------------------------
+% Title
+
+\usepackage{titling}
+
+\setlength{\droptitle}{-5 \baselineskip}
+
+\pretitle{\begin{center} \Huge \bfseries}
+\posttitle{\end{center} \vspace{-1mm}}
+
+\preauthor{\begin{center} \Large}
+\postauthor{\end{center} \vspace{-6mm}}
+
+\predate{\begin{center} \large}
+\postdate{\end{center}}
+
+\newcommand{\titlerule}[1]{\gdef\trule{#1}}
+\newcommand{\trule}{}
+\renewcommand{\maketitlehookd}{\noindent \trule}
+\titlerule{\rule{\linewidth}{0.2mm}}
+
+
+% -------------------------------------------------------------------------------------------------
+% Abstract
+
+\renewcommand{\abstractname}{Abstract}
+
+\renewenvironment{abstract}
+  {\centerline{\large \bfseries \abstractname} \vspace{0mm} \noindent \begin{quote} \itshape}
+  {\end{quote}}
+
+\newcommand{\myabstract}[1]{
+    \begin{abstract}
+        #1
+    \end{abstract}
+    \rule{\linewidth}{0.2mm}%
+}
+
+
+% -------------------------------------------------------------------------------------------------
+% Sections
+
+\usepackage{titlesec}
+
+\titleformat{\section}[block]{\Large \bfseries \raggedright}{\thesection .}{2mm}{}[]
+\titlespacing*{\section}{0mm}{\baselineskip}{2.25mm}
+
+\titleformat{\subsection}[block]{\bfseries \raggedright}{}{0mm}{\thesubsection \;}[]
+\titlespacing*{\subsection}{0mm}{0.75 \baselineskip}{1.5mm}
+
+\titleformat{\subsubsection}[runin]{\bfseries \raggedright}{}{0mm}{}[\mbox{ -- }]
+\titlespacing*{\subsubsection}{0mm}{0mm}{0mm}
+
+
+% -------------------------------------------------------------------------------------------------
+% Column Layout
+
+\usepackage{multicol}
+
+
+% -------------------------------------------------------------------------------------------------
+% FancyHDR
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{}
+
+\setlength{\headheight}{28pt}
+\renewcommand{\headrulewidth}{0.0mm}
+\renewcommand{\footrulewidth}{0.0mm}
+
+
+% -------------------------------------------------------------------------------------------------
+% Figures
+
+\usepackage{graphicx}
+\usepackage[above, below]{placeins}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\graphicspath{figures/}
+
+\newlength{\mycolumnwidth}
+\setlength{\mycolumnwidth}{\dimexpr 0.5 \textwidth - 0.5 \columnsep}
+
+\captionsetup[figure]{
+    name      = Fig.,
+    font      = small,
+    labelfont = bf,
+    labelsep  = colon,
+    width     = 0.95 \textwidth,
+    skip      = 1mm
+}
+
+\setcounter{topnumber}{1}
+\setcounter{bottomnumber}{1}
+\renewcommand{\topfraction}{1}
+\renewcommand{\bottomfraction}{1}
+
+
+% -------------------------------------------------------------------------------------------------
+% Tikz and Pgf
+
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat = newest}
+\pgfplotsset{samples = 100}
+
+
+% -------------------------------------------------------------------------------------------------
+% Biblatex
+
+\usepackage{biblatex}
+
+\addbibresource{resources/references.bib}
+
+
+% -------------------------------------------------------------------------------------------------
+% Hyperref
+
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks = true,
+    urlcolor   = black,
+    linkcolor  = black,
+    citecolor  = blue
+}
+
+
+% -------------------------------------------------------------------------------------------------
+% Glossary
+
+\usepackage[toc, acronym, automake, nogroupskip, nonumberlist]{glossaries-extra}
+
+\makeglossaries
+\input{resources/glossary}
+
+\glsfindwidesttoplevelname
+\setglossarystyle{alttree}

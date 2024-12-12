@@ -1,0 +1,40 @@
+\documentclass[letterpaper, 10pt]{article}
+
+\input{preamble}
+
+\title{main title}
+\date{\today}
+\author{author}
+
+\begin{document}
+
+	\maketitle
+
+	\myabstract{\blindtext[1]}
+	
+	\begin{multicols*}{2}
+		\input{resources/figures}
+		\input{sections/section1}
+		\input{sections/section2}
+		\input{sections/section3}
+	\end{multicols*}
+	
+	\input{sections/appendix}
+	
+	\newpage
+	\nocite{*}
+    \printbibliography[heading = bibintoc, title = {References}]
+    \printglossary[title = {Glossary of Terms}, toctitle = {Glossary of Terms}]
+    \printglossary[type = \acronymtype, title = {Acronyms}, toctitle = {Acronyms}]
+    \glsaddall
+
+	\newpage
+	\hypertarget{listoffigures}{}
+	\listoffigures
+	\hypertarget{listoftables}{}
+	\listoftables
+
+	\newpage
+    \tableofcontents
+	
+\end{document}
